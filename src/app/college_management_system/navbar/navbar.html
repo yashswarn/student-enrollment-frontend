@@ -1,0 +1,40 @@
+<div class="position-fixed w-100">
+  <nav class="p-2 bg-black  bg-light border-bottom gap-3">
+    <div class="d-flex justify-content-end ">
+      <div>
+        <div>
+          <button class="text-white" mat-button  (click)="scrollToSection('home')">Home</button>
+          <button class="text-white" mat-button *ngIf="hasRole('admin') && (router.url==='/registerstudent' || router.url==='/home')"  [routerLink]="'/viewstudents'">View Students</button>
+          <button class="text-white" mat-button *ngIf="hasRole('admin') && (router.url==='/viewstudents' || router.url==='/home')"   [routerLink]="'/registerstudent'">Register Student</button>
+          <button class="text-white" mat-button [routerLink]="'/dashboard'">Dashboard</button>
+          <button class="text-white" mat-button  (click)="scrollToSection('about')">About</button>
+          <button class="text-white" mat-button  (click)="scrollToSection('keyfeatures')">Features</button>
+          <button class="text-white" mat-button  (click)="scrollToSection('contact')">Contact</button>
+        </div>
+      </div>
+
+      <div>
+        <div *ngIf="!authService.isLoggedIn()">
+          <button class="text-white" mat-button [matMenuTriggerFor]="menu5">
+            Login / Register
+          </button>
+          <mat-menu #menu5="matMenu">
+            <button mat-menu-item [routerLink]="'/loginpage'" [queryParams]="{role:'admin'}">Login As Admin</button>
+            <button mat-menu-item [routerLink]="'/loginpage'" [queryParams]="{role:'teacher'}">Login As Teacher</button>
+            <button mat-menu-item [routerLink]="'/loginpage'" [queryParams]="{role:'department admin'}">Login As Department Admin</button>
+            <button mat-menu-item [routerLink]="'/registerpage'">
+              Register
+            </button>
+          </mat-menu>
+        </div>
+
+        <div *ngIf="authService.isLoggedIn()">
+          <button mat-button [matMenuTriggerFor]="menu7">Logout</button>
+          <mat-menu #menu7="matMenu">
+            <button mat-menu-item (click)="logout()">Logout</button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
