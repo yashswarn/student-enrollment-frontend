@@ -9,7 +9,7 @@ export class StudentService {
   constructor(private http: HttpClient) {}
 
   getDepartments() {
-    return this.http.get('http://localhost:3000/departments');
+    return this.http.get('https://student-enrollment-backend-heni.onrender.com/departments');
   }
 
   getCourses(DEPARTMENT_ID: number) {
@@ -21,7 +21,7 @@ export class StudentService {
       );
     }
     return this.http.get(
-      `http://localhost:3000/courses?departmentId=${DEPARTMENT_ID}`
+      `https://student-enrollment-backend-heni.onrender.com/courses?departmentId=${DEPARTMENT_ID}`
     );
   }
 
@@ -31,17 +31,17 @@ export class StudentService {
       return throwError(() => new Error('course is not selected yet'));
     }
     return this.http.get(
-      `http://localhost:3000/students?courseId=${COURSE_ID}`
+      `https://student-enrollment-backend-heni.onrender.com/students?courseId=${COURSE_ID}`
     );
   }
 
   getStudentById(studentId:number){
-    return this.http.get(`http://localhost:3000/students/getstudentbyid/${studentId}`)
+    return this.http.get(`https://student-enrollment-backend-heni.onrender.com/students/getstudentbyid/${studentId}`)
   }
 
   updateStudent(studentId:number,submittedStudents:any){
     return this.http.put(
-      `http://localhost:3000/students/update/${studentId}`,
+      `https://student-enrollment-backend-heni.onrender.com/students/update/${studentId}`,
       submittedStudents
     );
   }
@@ -52,13 +52,13 @@ export class StudentService {
       submittedStudents
     );
     return this.http.post(
-      'http://localhost:3000/students/add',
+      'https://student-enrollment-backend-heni.onrender.com/students/add',
       submittedStudents
     );
   }
 
   getAllStudents() {
-    return this.http.get('http://localhost:3000/students/get');
+    return this.http.get('https://student-enrollment-backend-heni.onrender.com/students/get');
   }
 
   getStudentsOfDept(DEPARTMENT_ID: number, COURSE_ID: number) {
@@ -71,7 +71,7 @@ export class StudentService {
       return;
     } else {
       return this.http.get(
-        `http://localhost:3000/students/for-enrollment?departmentId=${DEPARTMENT_ID}&courseId=${COURSE_ID}`
+        `https://student-enrollment-backend-heni.onrender.com/students/for-enrollment?departmentId=${DEPARTMENT_ID}&courseId=${COURSE_ID}`
       );
     }
   }
@@ -86,7 +86,7 @@ export class StudentService {
       return;
     }
     return this.http.get(
-      `http://localhost:3000/students/for-marks?departmentId=${DEPARTMENT_ID}&courseId=${COURSE_ID}`
+      `https://student-enrollment-backend-heni.onrender.com/students/for-marks?departmentId=${DEPARTMENT_ID}&courseId=${COURSE_ID}`
     );
   }
 
@@ -102,7 +102,7 @@ export class StudentService {
       selectedStudentsIds
     );
     console.log('selected course id at services side are->', COURSE_ID);
-    return this.http.post(`http://localhost:3000/enrollments`, {
+    return this.http.post(`https://student-enrollment-backend-heni.onrender.com/enrollments`, {
       studentIds: selectedStudentsIds,
       courseId: COURSE_ID,
     });
@@ -137,13 +137,13 @@ export class StudentService {
 
     console.log('Payload to be sent:', payload);
 
-    return this.http.post(`http://localhost:3000/enrollments/marks`, payload);
+    return this.http.post(`https://student-enrollment-backend-heni.onrender.com/enrollments/marks`, payload);
   }
 
   formSubmit(submittedLogin: any) {
     console.log('submitted login at services side are->', submittedLogin);
     return this.http.post(
-      `http://localhost:3000/login/logindetails`,
+      `https://student-enrollment-backend-heni.onrender.com/login/logindetails`,
       submittedLogin
     );
   }
@@ -151,32 +151,32 @@ export class StudentService {
   RegisterFormSubmit(submittedRegister: any) {
     console.log('submitted login at services side are->', submittedRegister);
     return this.http.post(
-      `http://localhost:3000/register/registerdetails`,
+      `https://student-enrollment-backend-heni.onrender.com/register/registerdetails`,
       submittedRegister
     );
   }
 
   getCount(){
-    return this.http.get('http://localhost:3000/students/count');
+    return this.http.get('https://student-enrollment-backend-heni.onrender.com/students/count');
   }
 
   getCourseCount(){
-    return this.http.get('http://localhost:3000/courses/coursecount');
+    return this.http.get('https://student-enrollment-backend-heni.onrender.com/courses/coursecount');
   }
 
   getActiveEnrollments(){
-    return this.http.get('http://localhost:3000/courses/activeenrollments');
+    return this.http.get('https://student-enrollment-backend-heni.onrender.com/courses/activeenrollments');
   }
 
   getCoursePopularity(){
-    return this.http.get('http://localhost:3000/enrollments/coursepopularity')
+    return this.http.get('https://student-enrollment-backend-heni.onrender.com/enrollments/coursepopularity')
   }
 
   getSearchedName(page:number, limit:number, searchedName:string=''){
-    return this.http.get(`http://localhost:3000/students/getsearchedname?page=${page}&limit=${limit}&searchedName=${searchedName}`)
+    return this.http.get(`https://student-enrollment-backend-heni.onrender.com/students/getsearchedname?page=${page}&limit=${limit}&searchedName=${searchedName}`)
   }
 
   deleteStudent(Student_id:number){
-    return this.http.delete(`http://localhost:3000/students/deletestudent/${Student_id}`)
+    return this.http.delete(`https://student-enrollment-backend-heni.onrender.com/students/deletestudent/${Student_id}`)
   }
 }
