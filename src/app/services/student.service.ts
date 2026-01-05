@@ -166,6 +166,7 @@ export class StudentService {
   }
 
   getActiveEnrollments(){
+    // return this.http.get('http://localhost:3000/courses/activeenrollments')
     return this.http.get(`${environment.backendUrl}/courses/activeenrollments`);
   }
 
