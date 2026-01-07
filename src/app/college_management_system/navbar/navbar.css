@@ -7,3 +7,25 @@
   z-index: 1000; 
   background-color: #111; 
 }
+
+.desktop-menu {
+  display: flex;
+}
+
+/* Hide hamburger on desktop */
+.mobile-menu-btn {
+  display: none;
+}
+
+/* 📱 MOBILE VIEW */
+@media (max-width: 768px) {
+
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+

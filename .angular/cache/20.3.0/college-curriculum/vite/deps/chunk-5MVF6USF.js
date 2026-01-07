@@ -6,7 +6,7 @@ import {
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   normalizePassiveListenerOptions
-} from "./chunk-6B7POFU2.js";
+} from "./chunk-JICMLGMV.js";
 import {
   Platform,
   coerceElement
@@ -97,15 +97,6 @@ function _animationsDisabled() {
   return mediaMatcher.matchMedia("(prefers-reduced-motion)").matches;
 }
 __name(_animationsDisabled, "_animationsDisabled");
-
-// node_modules/@angular/cdk/fesm2022/css-pixel-value-C_HEqLhI.mjs
-function coerceCssPixelValue(value) {
-  if (value == null) {
-    return "";
-  }
-  return typeof value === "string" ? value : `${value}px`;
-}
-__name(coerceCssPixelValue, "coerceCssPixelValue");
 
 // node_modules/@angular/material/fesm2022/ripple-BYgV4oZC.mjs
 var RippleState;
@@ -753,7 +744,6 @@ var MatRippleModule = _MatRippleModule;
 export {
   _isTestEnvironment,
   _animationsDisabled,
-  coerceCssPixelValue,
   defaultRippleAnimationConfig,
   RippleRenderer,
   MAT_RIPPLE_GLOBAL_OPTIONS,
@@ -761,4 +751,4 @@ export {
   _StructuralStylesLoader,
   MatRippleModule
 };
-//# sourceMappingURL=chunk-TLKYY277.js.map
+//# sourceMappingURL=chunk-5MVF6USF.js.map

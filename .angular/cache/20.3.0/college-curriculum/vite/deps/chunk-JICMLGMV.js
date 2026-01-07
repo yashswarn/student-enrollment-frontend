@@ -3247,6 +3247,7 @@ var MatCommonModule = _MatCommonModule;
 })();
 
 export {
+  coerceArray,
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   ENTER,
@@ -3261,11 +3262,10 @@ export {
   normalizePassiveListenerOptions,
   FocusMonitor,
   _CdkPrivateStyleLoader,
-  coerceArray,
   MediaMatcher,
   _IdGenerator,
   hasModifierKey,
   FocusKeyManager,
   MatCommonModule
 };
-//# sourceMappingURL=chunk-6B7POFU2.js.map
+//# sourceMappingURL=chunk-JICMLGMV.js.map

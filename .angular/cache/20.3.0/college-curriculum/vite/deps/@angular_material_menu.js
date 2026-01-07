@@ -1,17 +1,19 @@
 import {
-  MatRipple,
-  MatRippleModule,
-  _StructuralStylesLoader,
-  _animationsDisabled,
-  _isTestEnvironment,
-  coerceCssPixelValue
-} from "./chunk-TLKYY277.js";
-import {
   CdkScrollableModule,
   ScrollDispatcher,
   ScrollingModule,
   ViewportRuler
 } from "./chunk-NT5X5WI6.js";
+import {
+  MatRipple,
+  MatRippleModule,
+  _StructuralStylesLoader,
+  _animationsDisabled,
+  _isTestEnvironment
+} from "./chunk-5MVF6USF.js";
+import {
+  coerceCssPixelValue
+} from "./chunk-SORF7WJJ.js";
 import {
   supportsScrollBehavior
 } from "./chunk-A7H3BLDH.js";
@@ -34,7 +36,7 @@ import {
   hasModifierKey,
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader
-} from "./chunk-6B7POFU2.js";
+} from "./chunk-JICMLGMV.js";
 import {
   Platform
 } from "./chunk-RDURDLJ7.js";

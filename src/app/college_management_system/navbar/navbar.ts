@@ -7,6 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
@@ -24,6 +25,7 @@ import { concatAll } from 'rxjs';
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
+    MatDividerModule
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
