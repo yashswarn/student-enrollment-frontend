@@ -1,11 +1,10 @@
 :host {
   position: fixed;
-  /* display: block; */
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; 
-  background-color: #111; 
+  z-index: 1000;
+  background-color: #111;
 }
 
 .desktop-menu {
@@ -17,9 +16,8 @@
   display: none;
 }
 
-/* 📱 MOBILE VIEW */
+/* MOBILE VIEW */
 @media (max-width: 768px) {
-
   .desktop-menu {
     display: none;
   }
@@ -28,4 +26,3 @@
     display: block;
   }
 }
-

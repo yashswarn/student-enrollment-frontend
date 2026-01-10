@@ -25,7 +25,7 @@ import { concatAll } from 'rxjs';
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
@@ -43,29 +43,26 @@ export class Navbar implements OnInit {
   constructor(public authService: Auth, public router: Router) {}
 
   ngOnInit() {
-    this.authService.roles$.subscribe(roles=>{
-      this.roles=roles;
+    this.authService.roles$.subscribe((roles) => {
+      this.roles = roles;
       console.log('roles at navbar.ts file is->', this.roles);
-    })
-    // this.roles = this.authService.getUserRoles();
+    });
   }
 
-  isViewStudents:boolean=false;
-
+  isViewStudents: boolean = false;
 
   hasRole(role: string): boolean {
     console.log('role at navbar.ts file is->', role);
     return this.roles.includes(role);
   }
 
-  viewStudents(){
-    this.isViewStudents=true;
+  viewStudents() {
+    this.isViewStudents = true;
   }
 
   logout() {
     this.authService.logout();
-    this.roles=[];
-    // this.isViewStudents=false;
+    this.roles = [];
   }
 
   scrollToSection(sectionId: string) {

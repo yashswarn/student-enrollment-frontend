@@ -51,6 +51,24 @@
           >
             Register Student
           </button>
+
+          <button
+            class=""
+            mat-button
+            *ngIf="hasRole('teacher') && (router.url!=='/enrolledstudentsmarks')"
+            [routerLink]="'/enrolledstudentsmarks'"
+          >
+            Assign Marks
+          </button>
+
+          <button
+            class=""
+            mat-button
+            *ngIf="hasRole('department_admin') && (router.url!=='/studentenrollment')"
+            [routerLink]="'/studentenrollment'"
+          >
+            Enroll Students
+          </button>
         </div>
 
         <!-- login/register -->
@@ -133,6 +151,24 @@
     [routerLink]="'/registerstudent'"
   >
     Register Student
+  </button>
+
+  <button
+    class=""
+    mat-menu-item
+    *ngIf="hasRole('teacher') && (router.url!=='/enrolledstudentsmarks')"
+    [routerLink]="'/enrolledstudentsmarks'"
+  >
+    Assign Marks
+  </button>
+
+  <button
+    class=""
+    mat-menu-item
+    *ngIf="hasRole('department_admin') && (router.url!=='/studentenrollment')"
+    [routerLink]="'/studentenrollment'"
+  >
+    Enroll Students
   </button>
 
   <mat-divider></mat-divider>
